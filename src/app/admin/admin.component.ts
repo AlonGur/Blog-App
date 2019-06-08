@@ -20,21 +20,19 @@ export class AdminComponent implements OnInit {
  
   setDirection(target){
     if(target.classList.contains('sortSelected')){
-      if(target.classList.contains('up')){
-          target.classList.add('down')
-          target.classList.remove('up')
+      if(target.classList.contains('fa-sort-up')){
+          target.classList.replace('fa-sort-up','fa-sort-down')
       }
       else{
-        target.classList.add('up')
-        target.classList.remove('down')
+        target.classList.replace('fa-sort-down','fa-sort-up')
       }
+   
       
       this.myPosts.reverse();
     }
   
   }
   onTitleClick(e){
-    console.log('TITLE CLICKED', e.target.dataset.cat, this)
     let category= e.target.dataset.cat
     if(e.target.classList.contains('sortSelected')){
       this.setDirection(e.target)
@@ -44,10 +42,10 @@ export class AdminComponent implements OnInit {
       
       if(prevSelection){
         console.log('THIS IS PREVSELECTION:', prevSelection)
-        prevSelection.forEach(node=> node.classList.remove('up','down', 'sortSelected'))
+        prevSelection.forEach(node=> node.classList.remove('fa-sort-up','fa-sort-down', 'sortSelected'))
       }
       e.target.classList.add('sortSelected')
-      e.target.classList.add('down')
+      e.target.classList.add('fa-sort-up')
 
       this.myPosts.sort((a,b)=> a[category]< b[category] ? 1 : -1)
     

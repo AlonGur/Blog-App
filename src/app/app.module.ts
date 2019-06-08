@@ -24,6 +24,7 @@ import { PreviousComponent } from './previous/previous.component';
 import { AdminPrevComponent } from './admin-prev/admin-prev.component';
 import { PostEditorComponent } from './post-editor/post-editor.component';
 import { MarkdownToHtmlModule, MarkdownToHtmlPipe } from 'markdown-to-html-pipe';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 
@@ -68,6 +69,7 @@ const appRoutes: Routes = [
     ),
     FormsModule,
     MarkdownToHtmlModule,
+    AngularFontAwesomeModule,
     //MarkdownToHtmlPipe
   ],
   providers: [TestServiceService, PostTitlePipe, MarkdownToHtmlPipe],
