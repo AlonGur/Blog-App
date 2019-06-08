@@ -1,11 +1,11 @@
 
 <div class="postWrapper">
-  <h2> title: {{post.title}}</h2>
+  <h2> {{post.title}}</h2>
   <div> author: <app-tag appButton [tagName]="post.author" [type]="'author'"></app-tag></div>
   <div> date: {{post.date | date }}</div>
 
   <div class="tagsWrapper">
-    TAGS:
+    tags:
   <app-tag *ngFor="let tag of post.tags"  appButton [tagName]="tag" [type]="'category'"></app-tag>
 </div>
   <a (click)="titleHandler($event)" routerLink="/post/{{post.title | postTitle }}" > 
