@@ -4,7 +4,6 @@ import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '
 
 import { DataServiceService } from "../data-service.service";
 import { SortService} from "../sort.service"
-import { TestServiceService } from "../test-service.service"
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { EventEmitter } from 'events';
