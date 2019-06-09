@@ -11,19 +11,14 @@ export class PostPrevComponent implements OnInit {
   postKeys=[]
  
   titleHandler(){
-    //set title here
-    console.log('SETTING TITLE!!!!')
     this.PT.setTitle(this.post.title)
-    console.log('TITLE SET TO:' , this.PT.getTitle())
   }
   constructor(private PT: PostTitleService) { }
 
   ngOnInit() {
-    console.log('IIIIIIII', this.post)
     for(let key in this.post){
       this.postKeys.push(key)
     }
-    // console.log('BBBBB', this.post['tags'])
   }
 
 }

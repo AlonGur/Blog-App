@@ -15,26 +15,22 @@ export class PostComponent implements OnInit {
   myPostTitle
   myPost
   myPostURL = `../../assets/blogData/posts/html/${this.PT.getTitle()}`
-  //myPostURL = `../../assets/blogData/posts/html/jQuery%20-%20Selectors,%20DOM.html`
- 
 
-  // getPost(){
-  //   return this.http.get(this.myPostURL);
-  // }
   insertPost(){
     var target=document.querySelector('.postWrapper')
     target.innerHTML=this.myPost;
-    console.log('THIS IS THE POST TARGET:', target)
   }
   
   constructor(private router: Router, private data: DataServiceService, private PT: PostTitleService,
              private http: HttpClient, private GP: GetPostService) { }
   
   ngOnInit() {
-    console.log('IN POSTTTT', this)
+    //get post title to load from servie
    this.myPostTitle=this.PT.getTitle();
+   //get post html using serive
    this.GP.getPostHtml(this.myPostTitle).subscribe(post=>{
      this.myPost=post;
+     //add post to html
      this.insertPost();
 
    })

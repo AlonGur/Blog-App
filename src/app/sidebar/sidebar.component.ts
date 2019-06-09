@@ -25,7 +25,6 @@ clickMe(){
    }
 
   ngOnInit() {
-    console.log('sidebarrrrr linkdest:', this.linkDest)
     }
   
     ngAfterViewInit(){

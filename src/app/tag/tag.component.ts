@@ -22,8 +22,6 @@ export class TagComponent implements OnInit {
  
 
 @HostListener('click') onclick(){
-    console.log('CLCIKED IN HOST LISTNER', this.queryObj)
-   // this.router.navigate(['/posts'], { queryParams: this.queryObj})
     
 }
 

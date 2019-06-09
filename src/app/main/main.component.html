@@ -4,8 +4,8 @@
       <app-post-prev  *ngFor="let post of filteredData | slice:currentPage*PostsPerPage:(currentPage+1)*PostsPerPage" 
       [post]="post"></app-post-prev>
     </div>
-    <span class="paging" *ngIf="(currentPage+1)*PostsPerPage <= myDisplayData.length" [routerLink]="['/posts', currentPage+1]" queryParamsHandling="merge">NEXT</span>
-    <span class="paging" *ngIf="currentPage >=1" [routerLink]="['/posts', currentPage-1]" queryParamsHandling="merge">PREVIOUS</span>
+    <button class="paging" *ngIf="(currentPage+1)*PostsPerPage <= myDisplayData.length" [routerLink]="['/posts', currentPage+1]" queryParamsHandling="merge">NEXT</button>
+    <button class="paging" *ngIf="currentPage >=1" [routerLink]="['/posts', currentPage-1]" queryParamsHandling="merge">PREVIOUS</button>
 
 </div>
 <div class="col-4">

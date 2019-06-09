@@ -33,33 +33,20 @@ export class DataServiceService {
   }
 
   filterData(unfilteredData, tag){
-
-    console.log('before filtering : ' , unfilteredData)
-
     var filteredData=unfilteredData;
-   if(tag['category']){
+     if(tag['category']){
     filteredData=unfilteredData.filter(post => post['tags'].indexOf(tag['category'])!=-1)
     console.log('in cat if,' , filteredData)
   }
-  else if(tag['author']){
+   else if(tag['author']){
     filteredData= unfilteredData.filter(post=> post['author']===tag['author'])
 
   }
- 
-  console.log('after filtering:', filteredData)
-    return filteredData
+     return filteredData
   }
  
- 
 
- 
-
-  constructor(private http: HttpClient) { 
-  this.getConfig().subscribe(posts=>{
-
-   // this.myData=posts['posts']
-    console.log('in service my data is:', this.myData)
-  })
-  
+  constructor(private http: HttpClient) {
+    
   }
 }

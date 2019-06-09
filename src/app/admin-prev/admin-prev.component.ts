@@ -12,9 +12,7 @@ export class AdminPrevComponent implements OnInit {
   
   titleHandler(){
     //set title here
-    console.log('SETTING TITLE!!!!')
     this.PT.setTitle(this.post.title)
-    console.log('TITLE SET TO:' , this.PT.getTitle())
   }
   constructor(private PT:PostTitleService) { }
 
