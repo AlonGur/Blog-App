@@ -55,8 +55,6 @@ export class MainComponent implements OnInit {
         post['tags'].forEach(tag=> this.uniqueTagArr.push(tag))
         this.uniqueAuthorArr.push(post['author'])
 
-
-        let myDate=Date.parse(post['date'])
       })
     
         this.uniqueTagArr=this.uniqueTagArr.filter((val,index,arr)=>{
@@ -70,7 +68,6 @@ export class MainComponent implements OnInit {
         //set counters for sidebar
         this.tagCounter= this.data.setCounter(this.uniqueTagArr, this.myData,'tags');
         this.authorCounter=this.data.setCounter(this.uniqueAuthorArr,this.myData,'author')
-        console.log('YYYY', this.tagCounter, this.authorCounter)
       })
       
      
@@ -78,16 +75,13 @@ export class MainComponent implements OnInit {
       this.myDisplayData=this.myData
       //subscribe to route query map to filter data if needed
      
-     
+      this.route.paramMap.subscribe(params => {
+        this.currentPage=params.params['page'] | 0;
+      })
      
       this.route.queryParamMap.subscribe(query=>{
-        this.filteredData=this.data.filterData(this.myData ,query.params)
-      })
-
-      this.route.paramMap.subscribe(params => {
-        this.currentPage=params.params['page'] | 0
-      })
-   
+        this.filteredData=this.data.filterData(this.myData ,query.params);
+      })   
   }
 
 }

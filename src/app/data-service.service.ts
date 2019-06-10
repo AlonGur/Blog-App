@@ -22,8 +22,10 @@ export class DataServiceService {
       counterObj[tag]=0;
 
       data.forEach(post=>{
+        let flag=false;
        if(!Array.isArray(post[key])){
         post[key]=Array.of(post[key]);
+        flag=true;
        }
       
         post[key].forEach(possibleMatch=>{
@@ -31,6 +33,9 @@ export class DataServiceService {
               counterObj[tag]++  
           }
         })
+        if(flag){
+          post[key]=post[key][0]
+        }
       })
     }
     return counterObj
@@ -41,7 +46,6 @@ export class DataServiceService {
     var filteredData=unfilteredData;
      if(tag['category']){
     filteredData=unfilteredData.filter(post => post['tags'].indexOf(tag['category'])!=-1)
-    console.log('in cat if,' , filteredData)
   }
    else if(tag['author']){
     filteredData= unfilteredData.filter(post=> post['author']===tag['author'])

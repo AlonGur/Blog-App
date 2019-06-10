@@ -23,7 +23,6 @@ export class SidebarComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log('SIDEBARRRRR', this.uniqueTagArr, this.authorCounter, this.authors, this.counterArr)
     }
   
     ngAfterViewInit(){

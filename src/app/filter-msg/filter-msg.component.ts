@@ -16,9 +16,7 @@ export class FilterMsgComponent implements OnInit {
   ngOnInit() {
 
     this.route.queryParamMap.subscribe(query=>{
-      console.log('MSG', query['params'])
       for(var key in query['params']){
-        console.log('OOOOOO',key)
         this.filterKey=key;
         this.filterVal=query['params'][key]
       }
