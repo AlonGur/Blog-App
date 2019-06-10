@@ -27,10 +27,7 @@ export class PostEditorComponent implements OnInit {
   clickHandler(e){
   }
 
-  insertPost(){
-    var target=document.querySelector('.postWrapper')
-    target.innerHTML=this.myPost;
-  }
+ 
   saveChanges(e){
     let postAfterChanges={
       title: <HTMLInputElement>document.querySelector('.title'),

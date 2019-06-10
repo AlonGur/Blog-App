@@ -1,0 +1,7 @@
+<p *ngIf="filterKey==='' ;else elseBlock">
+  Showing all posts
+</p>
+
+<ng-template #elseBlock>
+  filtering posts by {{filterKey}} : {{filterVal}}
+</ng-template>

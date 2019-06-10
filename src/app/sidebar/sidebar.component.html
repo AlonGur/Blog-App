@@ -1,13 +1,16 @@
 
 
-<h2 [routerLink]="linkDest" >    See All Posts </h2>
+<div class=" col-12 btn btn-light">Show All Posts</div>
 <div class="sortByCategory sidebarItem">
   <h3>Category</h3>
  
-  <li *ngFor="let tag of uniqueTagArr">
+  <li class="row" *ngFor="let tag of uniqueTagArr">
    
-    <app-tag  [linkDest]="linkDest"[tagName]="tag" [makeActive]="true" [type]="'category'"></app-tag>
-    {{counterArr[tag]}}
+    <app-tag class="col-6 btn btn-light" [linkDest]="linkDest"[tagName]="tag" [makeActive]="true" [type]="'category'"></app-tag>
+    <div class="col-2">
+       {{counterArr[tag]}}
+    </div>
+   
    
   </li>
 
@@ -15,9 +18,12 @@
 
 <div class="sortByAuthor sidebarItem">
     <h3>Author</h3>
-    <li *ngFor="let author of authors">
-      <app-tag  [tagName]="author" [makeActive]="true" [type]="'author'"></app-tag>
+    <li class="row" *ngFor="let author of authors">
+      <app-tag class="col-6 btn btn-light"  [tagName]="author" [makeActive]="true" [type]="'author'"></app-tag>
+     <div class="col-2">
       {{authorCounter[author]}}
+     </div>
+    
     </li>
 
 </div>

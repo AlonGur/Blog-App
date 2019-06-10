@@ -1,6 +1,6 @@
 import { Component, OnInit , Input, HostListener, Injectable} from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
+import { Router} from '@angular/router';
 
 import { DataServiceService } from "../data-service.service";
 import { SortService} from "../sort.service"
@@ -57,7 +57,6 @@ export class MainComponent implements OnInit {
 
 
         let myDate=Date.parse(post['date'])
-        console.log('TTTTTT', myDate , post['date'], typeof(post['date']))
       })
     
         this.uniqueTagArr=this.uniqueTagArr.filter((val,index,arr)=>{
@@ -67,7 +66,6 @@ export class MainComponent implements OnInit {
           return arr.indexOf(val)==index
         })
 
-        console.log('UNIQUEEE', this.uniqueTagArr, this. uniqueAuthorArr)
 
         //set counters for sidebar
         this.tagCounter= this.data.setCounter(this.uniqueTagArr, this.myData,'tags');

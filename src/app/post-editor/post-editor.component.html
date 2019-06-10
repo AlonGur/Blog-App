@@ -1,15 +1,26 @@
 
-<div class="postWrapper"></div>
 
-<div>Title: 
-  <input class="title"[(ngModel)]="myPost.title">
+<div class="row">
+  <div class="col-1">Title:</div> 
+  <div class="col-1">
+      <input class="title"[(ngModel)]="myPost.title">
+  </div> 
 </div>
-<div>Author: 
-  <input class="author" [(ngModel)]="myPost.author">
-</div>
-<div>Date: 
-  <input class="date" [(ngModel)]="myPost.date">
-</div>
+
+<div class="row">
+    <div class="col-1">Author:</div> 
+    <div class="col-1">
+        <input class="title"[(ngModel)]="myPost.author">
+    </div> 
+  </div>
+
+  <div class="row">
+      <div class="col-1">Date:</div> 
+      <div class="col-1">
+          <input class="title"[(ngModel)]="myPost.date">
+      </div> 
+    </div>
+
 <button (click)="saveChanges($event)" >save</button>
 
 <div class="row">

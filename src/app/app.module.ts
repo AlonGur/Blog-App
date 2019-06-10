@@ -21,6 +21,7 @@ import { AdminPrevComponent } from './admin-prev/admin-prev.component';
 import { PostEditorComponent } from './post-editor/post-editor.component';
 import { MarkdownToHtmlModule, MarkdownToHtmlPipe } from 'markdown-to-html-pipe';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FilterMsgComponent } from './filter-msg/filter-msg.component';
 
 
 
@@ -50,7 +51,8 @@ const appRoutes: Routes = [
     AuthorComponent,
     PostTitlePipe,
     AdminPrevComponent,
-    PostEditorComponent
+    PostEditorComponent,
+    FilterMsgComponent
   ],
   imports: [
     BrowserModule,

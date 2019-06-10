@@ -6,7 +6,7 @@
 
   <div class="tagsWrapper">
     tags:
-  <app-tag *ngFor="let tag of post.tags"  appButton [tagName]="tag" [type]="'category'"></app-tag>
+  <app-tag   class=" btn btn-light" *ngFor="let tag of post.tags"  appButton [tagName]="tag" [type]="'category'"></app-tag>
 </div>
   <a (click)="titleHandler($event)" routerLink="/post/{{post.title | postTitle }}" > 
     <span >READ MORE : {{post.title }}</span>
