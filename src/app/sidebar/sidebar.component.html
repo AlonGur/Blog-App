@@ -4,7 +4,7 @@
 <div class="sortByCategory sidebarItem">
   <h3>Category</h3>
  
-  <li *ngFor="let tag of tags">
+  <li *ngFor="let tag of uniqueTagArr">
    
     <app-tag  [linkDest]="linkDest"[tagName]="tag" [makeActive]="true" [type]="'category'"></app-tag>
     {{counterArr[tag]}}
@@ -17,10 +17,7 @@
     <h3>Author</h3>
     <li *ngFor="let author of authors">
       <app-tag  [tagName]="author" [makeActive]="true" [type]="'author'"></app-tag>
-
+      {{authorCounter[author]}}
     </li>
 
-</div>
-
-<div class="sortByDate sidebarItem">    <h3>Date</h3>
 </div>

@@ -41,7 +41,6 @@ export class AdminComponent implements OnInit {
       let prevSelection =Array.from(document.querySelectorAll('.sortSelected'))
       
       if(prevSelection){
-        console.log('THIS IS PREVSELECTION:', prevSelection)
         prevSelection.forEach(node=> node.classList.remove('fa-sort-up','fa-sort-down', 'sortSelected'))
       }
       e.target.classList.add('sortSelected')
@@ -73,13 +72,14 @@ export class AdminComponent implements OnInit {
        this.uniqueAuthorArr=this.uniqueAuthorArr.filter((val,index,arr)=>{
          return arr.indexOf(val)==index
        })
-       this.tagCounter=this.data.setCounter(this.uniqueTagArr, this.myPosts)
+       this.tagCounter=this.data.setCounter(this.uniqueTagArr, this.myPosts,'tags');
+       this.authorCounter=this.data.setCounter(this.uniqueAuthorArr,this.myPosts,'author')
+      
 
      })
 
      this.route.queryParamMap.subscribe(query=>{
       this.filteredPosts=this.data.filterData(this.myPosts ,query['params'])
-      console.log('ROUTE CHANGED YOOOOOOOO33333', query['params'])
     })
    
 

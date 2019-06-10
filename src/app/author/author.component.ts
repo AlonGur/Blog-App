@@ -18,7 +18,6 @@ export class AuthorComponent implements OnInit {
   @Input () makeActive: boolean
  
   onAuthorClicked(e){
-    console.log(e,this)
     this.sort.setInfo('author', this.author)
    this.router.navigate(['/posts'], { queryParams: { author: this.author } });
   }

@@ -28,12 +28,13 @@ export class MainComponent implements OnInit {
   myDisplayData=[]
   uniqueTagArr=[]
   uniqueAuthorArr=[]
+  uniqueMonthArr=[]
   route
   currentPage
   PostsPerPage=3
   counterArr
-  tagObj={}
-  authObj={}
+  tagCounter={}
+  authorCounter={}
   filteredData=[]
   linkDest="/posts"
  
@@ -49,10 +50,14 @@ export class MainComponent implements OnInit {
     this.data.getConfig().subscribe(posts => {
        posts['posts'].forEach(post=>  this.myData.push(post))
       
-       //create unique tag array to send to sidebar
+       //create unique tag, author, date arrays to send to sidebar
       this.myData.forEach(post=>{
         post['tags'].forEach(tag=> this.uniqueTagArr.push(tag))
         this.uniqueAuthorArr.push(post['author'])
+
+
+        let myDate=Date.parse(post['date'])
+        console.log('TTTTTT', myDate , post['date'], typeof(post['date']))
       })
     
         this.uniqueTagArr=this.uniqueTagArr.filter((val,index,arr)=>{
@@ -62,7 +67,12 @@ export class MainComponent implements OnInit {
           return arr.indexOf(val)==index
         })
 
-        this.tagObj= this.data.setCounter(this.uniqueTagArr, this.myData)
+        console.log('UNIQUEEE', this.uniqueTagArr, this. uniqueAuthorArr)
+
+        //set counters for sidebar
+        this.tagCounter= this.data.setCounter(this.uniqueTagArr, this.myData,'tags');
+        this.authorCounter=this.data.setCounter(this.uniqueAuthorArr,this.myData,'author')
+        console.log('YYYY', this.tagCounter, this.authorCounter)
       })
       
      

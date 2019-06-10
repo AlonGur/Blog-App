@@ -11,20 +11,19 @@ export class SidebarComponent implements OnInit {
 
 
 
-@Input () tags 
+@Input () uniqueTagArr 
 @Input () authors 
 @Input () counterArr
-@Input () authCounter
+@Input () authorCounter
 @Input () linkDest
 
-clickMe(){
- 
-}
+
   constructor() {
    
    }
 
   ngOnInit() {
+    console.log('SIDEBARRRRR', this.uniqueTagArr, this.authorCounter, this.authors, this.counterArr)
     }
   
     ngAfterViewInit(){

@@ -13,15 +13,20 @@ export class DataServiceService {
     return this.http.get(this.myPosts);
   }
   putConfig(posts){
-    console.log('putting posts', posts)
     return this.http.patch(this.myPosts,posts)
   }
-  setCounter (uniqArr,data){
+  setCounter (uniqArr,data,key){
+   
     let counterObj={}
     for(let tag of uniqArr){
       counterObj[tag]=0;
+
       data.forEach(post=>{
-        post['tags'].forEach(possibleMatch=>{
+       if(!Array.isArray(post[key])){
+        post[key]=Array.of(post[key]);
+       }
+      
+        post[key].forEach(possibleMatch=>{
           if(possibleMatch===tag){
               counterObj[tag]++  
           }
