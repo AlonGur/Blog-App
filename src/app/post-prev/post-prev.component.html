@@ -1,12 +1,12 @@
 
 <div class="postWrapper card">
   <h2> {{post.title}}</h2>
-  <div> by: <app-tag appButton [tagName]="post.author" [type]="'author'"></app-tag></div>
-  <div> published: {{post.date | date }}</div>
+  <div> <i class="fa fa-user"></i> <app-tag  class="btn btn-light" [tagName]="post.author" [type]="'author'"></app-tag></div>
+  <div> <i class="fa fa-upload"></i> {{post.date | date }}</div>
 
   <div class="tagsWrapper">
-    tags:
-  <app-tag   class=" btn btn-light" *ngFor="let tag of post.tags"  appButton [tagName]="tag" [type]="'category'"></app-tag>
+      <i class="fa fa-tags"></i>
+  <app-tag   class=" btn btn-light" *ngFor="let tag of post.tags"   [tagName]="tag" [type]="'category'"></app-tag>
 </div>
   <a (click)="titleHandler()" routerLink="/post/{{post.title | postTitle }}" > 
     <span >READ MORE : {{post.title }}</span>
