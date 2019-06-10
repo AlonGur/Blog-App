@@ -8,7 +8,7 @@
     tags:
   <app-tag   class=" btn btn-light" *ngFor="let tag of post.tags"  appButton [tagName]="tag" [type]="'category'"></app-tag>
 </div>
-  <a (click)="titleHandler($event)" routerLink="/post/{{post.title | postTitle }}" > 
+  <a (click)="titleHandler()" routerLink="/post/{{post.title | postTitle }}" > 
     <span >READ MORE : {{post.title }}</span>
   </a>
 
